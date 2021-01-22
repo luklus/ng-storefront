@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { Observable } from 'rxjs'
 import { ProductListingInterface } from 'src/app/modules/products/models/interfaces'
-import { ProductService } from 'src/app/modules/products/shared/services/product.service'
+import { ProductsService } from 'src/app/modules/products/shared/services/products.service'
 
 @Component({
   selector: 'app-home',
@@ -11,9 +11,9 @@ import { ProductService } from 'src/app/modules/products/shared/services/product
 export class HomeComponent implements OnInit {
   productListing$: Observable<ProductListingInterface>
 
-  constructor(private productService: ProductService) {}
+  constructor(private productsService: ProductsService) {}
 
   ngOnInit(): void {
-    this.productListing$ = this.productService.getProductListing()
+    this.productListing$ = this.productsService.getProductListing()
   }
 }

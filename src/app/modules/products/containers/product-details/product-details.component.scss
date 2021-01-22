@@ -1,0 +1,49 @@
+:host {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 1fr 24rem;
+  grid-template-rows: 24rem 1fr;
+  grid-template-areas:
+    'imgs info'
+    'more .';
+  position: relative;
+
+  .product-details-info {
+    position: sticky;
+    right: 0;
+    top: 2rem;
+    grid-area: info;
+    width: 24rem;
+
+    &__id {
+      color: var(--c-gray-400);
+    }
+
+    &__price {
+      font-size: 1.25em;
+      font-weight: bold;
+
+      span {
+        color: var(--c-gray-400);
+        text-decoration: line-through;
+      }
+    }
+
+    .pd__action {
+      width: 14rem;
+
+      app-button {
+        width: 100%;
+      }
+    }
+  }
+
+  .product-details-imgs {
+    background-color: var(--c-gray-400);
+    grid-area: imgs;
+  }
+
+  .product-details-more {
+    grid-area: more;
+  }
+}

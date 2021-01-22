@@ -1,4 +1,5 @@
 interface ProductInterface {
+  desc?: string
   id: string
   name: string
   slug: string
