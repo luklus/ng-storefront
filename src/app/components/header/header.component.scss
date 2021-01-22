@@ -1,0 +1,18 @@
+:host {
+  border-bottom: 1px solid var(--c-gray-50);
+  display: flex;
+
+  .wrap {
+    padding: 2rem;
+  }
+
+  a {
+    text-decoration: none;
+
+    &.logo {
+      color: var(--c-reds-500);
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+  }
+}
