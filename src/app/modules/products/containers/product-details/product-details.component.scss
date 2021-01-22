@@ -9,10 +9,10 @@
   position: relative;
 
   .product-details-info {
+    grid-area: info;
     position: sticky;
     right: 0;
     top: 2rem;
-    grid-area: info;
     width: 24rem;
 
     &__id {
@@ -26,14 +26,6 @@
       span {
         color: var(--c-gray-400);
         text-decoration: line-through;
-      }
-    }
-
-    .pd__action {
-      width: 14rem;
-
-      app-button {
-        width: 100%;
       }
     }
   }

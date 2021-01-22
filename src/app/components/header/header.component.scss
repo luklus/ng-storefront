@@ -6,7 +6,22 @@
     padding: 2rem;
   }
 
+  nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  ul {
+    align-items: center;
+    display: flex;
+  }
+
   a {
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+    position: relative;
+
     &.logo {
       color: var(--c-reds-500);
       font-weight: bold;
