@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "ng-storefront"
+  "defaultProject": "ng-storefront",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
