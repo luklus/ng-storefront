@@ -1,0 +1,17 @@
+:host {
+  display: grid;
+  grid-auto-columns: 25%;
+  grid-auto-flow: column;
+  grid-gap: 1rem;
+  margin-bottom: 2rem;
+  overflow-x: scroll;
+  scroll-snap-points-y: repeat(25%);
+  scroll-snap-type: x mandatory;
+  width: 100%;
+}
+
+:host ::ng-deep > * {
+  background-color: var(--c-gray-50);
+  overflow: hidden;
+  scroll-snap-align: start;
+}

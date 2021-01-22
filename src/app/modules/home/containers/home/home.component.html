@@ -1,3 +1,19 @@
 <app-hero>
   <h2>Welcome in NgStorefront</h2>
 </app-hero>
+
+<app-head>What's New</app-head>
+<app-grid *ngIf="productListing$ | async as productListing">
+  <app-product-card
+    *ngFor="let product of productListing.list"
+    [product]="product"
+  ></app-product-card>
+</app-grid>
+
+<app-head>Bestsellers</app-head>
+<app-grid *ngIf="productListing$ | async as productListing">
+  <app-product-card
+    *ngFor="let product of productListing.list"
+    [product]="product"
+  ></app-product-card>
+</app-grid>
