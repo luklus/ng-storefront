@@ -10,6 +10,7 @@ import { NgModule } from '@angular/core'
 import { ProductsModule } from './modules/products/products.module'
 import { StoreModule } from '@ngrx/store'
 import { SvgIconsModule } from '@ngneat/svg-icon'
+import { uiReducer } from './store/app.reducer'
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent],
@@ -18,7 +19,7 @@ import { SvgIconsModule } from '@ngneat/svg-icon'
     BrowserModule,
     HomeModule,
     ProductsModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({ ui: uiReducer }),
     SvgIconsModule.forRoot({
       defaultSize: 'md',
       icons: [iconCart, iconList],
