@@ -6,12 +6,14 @@ import { ProductCardModule } from './shared/components/product-card/product-card
 import { ProductDetailsComponent } from './containers/product-details/product-details.component'
 import { ProductListingComponent } from './containers/product-listing/product-listing.component'
 import { ButtonModule } from '../shared/components/button/button.module'
+import { GridModule } from '../shared/components/grid/grid.module'
 
 @NgModule({
   declarations: [ProductDetailsComponent, ProductListingComponent],
   imports: [
     ButtonModule,
     CommonModule,
+    GridModule,
     ProductCardModule,
     ProductsRoutingModule,
   ],

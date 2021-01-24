@@ -1,1 +1,6 @@
-<p>product-listing works!</p>
+<app-grid-base *ngIf="productListing$ | async as productListing">
+  <app-product-card
+    *ngFor="let product of productListing.list"
+    [product]="product"
+  ></app-product-card>
+</app-grid-base>

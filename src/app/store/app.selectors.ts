@@ -6,4 +6,9 @@ const uiNameSelector = createSelector(
   (ui: UIStateInterface) => ui.name
 )
 
-export { uiNameSelector }
+const uiIDSelector = createSelector(
+  (state: AppStateInterface) => state.ui,
+  (ui: UIStateInterface) => ui.id
+)
+
+export { uiIDSelector, uiNameSelector }

@@ -3,17 +3,17 @@
 </app-hero>
 
 <app-head>What's New</app-head>
-<app-grid *ngIf="productListing$ | async as productListing">
+<app-grid-scroll *ngIf="productListing$ | async as productListing">
   <app-product-card
     *ngFor="let product of productListing.list"
     [product]="product"
   ></app-product-card>
-</app-grid>
+</app-grid-scroll>
 
 <app-head>Bestsellers</app-head>
-<app-grid *ngIf="productListing$ | async as productListing">
+<app-grid-scroll *ngIf="productListing$ | async as productListing">
   <app-product-card
     *ngFor="let product of productListing.list"
     [product]="product"
   ></app-product-card>
-</app-grid>
+</app-grid-scroll>

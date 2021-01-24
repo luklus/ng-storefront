@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { GridComponent } from './grid.component'
+import { GridScrollComponent } from './grid-scroll/grid-scroll.component'
+import { GridBaseComponent } from './grid-base/grid-base.component'
 
 @NgModule({
-  declarations: [GridComponent],
-  exports: [GridComponent],
+  declarations: [GridScrollComponent, GridBaseComponent],
+  exports: [GridScrollComponent, GridBaseComponent],
   imports: [CommonModule],
 })
 export class GridModule {}

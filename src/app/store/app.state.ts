@@ -1,6 +1,7 @@
 const uiFeatureKey = 'ui'
 
 interface UIStateInterface {
+  id: string
   name: string
 }
 
