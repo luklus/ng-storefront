@@ -1,1 +1,8 @@
-<p>cart works!</p>
+<ng-container *ngIf="cart$ | async as cart">
+  <div class="cart__list">
+    <app-product-card
+      *ngFor="let product of cart.itemList"
+      [product]="product"
+    ></app-product-card>
+  </div>
+</ng-container>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core'
+import { Observable } from 'rxjs'
+import { CartInterface } from '../../models/CartModel'
+import { CartService } from '../../services/cart.service'
 
 @Component({
   selector: 'app-cart',
@@ -6,7 +9,10 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit {
-  constructor() {}
+  cart$: Observable<CartInterface>
+  constructor(private cartService: CartService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.cart$ = this.cartService.getCart()
+  }
 }
