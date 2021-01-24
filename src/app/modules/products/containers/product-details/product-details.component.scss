@@ -1,19 +1,26 @@
+@import 'src/styles/base/mixn';
+
 :host {
   display: grid;
   grid-gap: 2rem;
-  grid-template-columns: 1fr 24rem;
-  grid-template-rows: 24rem 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 24rem auto 1fr;
   grid-template-areas:
-    'imgs info'
-    'more .';
+    'imgs'
+    'info'
+    'more';
   position: relative;
+
+  @include mq(md) {
+    grid-template-columns: 1fr 24rem;
+    grid-template-rows: 24rem 1fr;
+    grid-template-areas:
+      'imgs info'
+      'more .';
+  }
 
   .product-details-info {
     grid-area: info;
-    position: sticky;
-    right: 0;
-    top: 2rem;
-    width: 24rem;
 
     &__id {
       color: var(--c-gray-400);
@@ -27,6 +34,13 @@
         color: var(--c-gray-400);
         text-decoration: line-through;
       }
+    }
+
+    @include mq(md) {
+      position: sticky;
+      right: 0;
+      top: 2rem;
+      width: 24rem;
     }
   }
 

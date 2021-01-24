@@ -1,13 +1,25 @@
+@import 'src/styles/base/mixn';
+
 :host {
   display: grid;
-  grid-auto-columns: 25%;
+  grid-auto-columns: 75%;
   grid-auto-flow: column;
   grid-gap: 1rem;
   margin-bottom: 2rem;
   overflow-x: scroll;
-  scroll-snap-points-y: repeat(25%);
+  scroll-snap-points-y: repeat(75%);
   scroll-snap-type: x mandatory;
   width: 100%;
+
+  @include mq(sm) {
+    grid-auto-columns: 40%;
+    scroll-snap-points-y: repeat(40%);
+  }
+
+  @include mq(md) {
+    grid-auto-columns: 25%;
+    scroll-snap-points-y: repeat(25%);
+  }
 }
 
 :host ::ng-deep > * {
