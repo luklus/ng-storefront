@@ -10,13 +10,15 @@ import { NgModule } from '@angular/core'
 import { ProductsModule } from './modules/products/products.module'
 import { StoreModule } from '@ngrx/store'
 import { SvgIconsModule } from '@ngneat/svg-icon'
-import { uiReducer } from './store/app.reducer'
+import { uiReducer } from './store/app.reducers'
+import { CartModule } from './modules/cart/cart.module'
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent],
   imports: [
     AppRoutingModule,
     BrowserModule,
+    CartModule,
     HomeModule,
     ProductsModule,
     StoreModule.forRoot({ ui: uiReducer }),

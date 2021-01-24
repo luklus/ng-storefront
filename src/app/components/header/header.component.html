@@ -15,6 +15,7 @@
       <li>
         <a routerLink="/cart">
           <svg-icon key="cart"></svg-icon>
+          <span class="header__quantity">{{ quantity$ | async }}</span>
         </a>
       </li>
     </ul>

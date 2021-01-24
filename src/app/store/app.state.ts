@@ -1,9 +1,11 @@
+const uiFeatureKey = 'ui'
+
 interface UIStateInterface {
   name: string
 }
 
 interface AppStateInterface {
-  ui: UIStateInterface
+  [uiFeatureKey]: UIStateInterface
 }
 
 export { AppStateInterface, UIStateInterface }

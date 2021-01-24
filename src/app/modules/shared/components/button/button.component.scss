@@ -1,0 +1,14 @@
+:host ::ng-deep button {
+  align-items: center;
+  background-color: var(--c-white);
+  border: 1px solid var(--c-gray-400);
+  cursor: pointer;
+  display: flex;
+  font-size: 1.125rem;
+  font-weight: bold;
+  justify-content: center;
+  max-width: 16rem;
+  outline: 0;
+  padding: 1rem 1.25rem;
+  width: 100%;
+}

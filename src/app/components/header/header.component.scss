@@ -27,5 +27,20 @@
       font-weight: bold;
       font-size: 1.5rem;
     }
+
+    span.header__quantity {
+      align-items: center;
+      background-color: blue;
+      border-radius: 50%;
+      color: white;
+      display: flex;
+      font-weight: bold;
+      height: 1.5rem;
+      justify-content: center;
+      position: absolute;
+      right: -0.5rem;
+      top: -0.5rem;
+      width: 1.5rem;
+    }
   }
 }

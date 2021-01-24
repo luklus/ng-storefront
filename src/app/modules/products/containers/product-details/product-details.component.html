@@ -6,6 +6,10 @@
     <p class="product-details-info__id">ID: {{ productDetails?.id }}</p>
 
     <p class="product-details-info__price">$100.00 <span>/ $120.00</span></p>
+
+    <app-button>
+      <button (click)="handleAddToCard(productDetails)">Add To Cart</button>
+    </app-button>
   </section>
 
   <section class="product-details-more">
