@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core'
+import { CartProductInterface } from 'src/app/modules/cart/models/CartModel'
 import { ProductInterface } from '../../../models/interfaces'
 
 @Component({
@@ -7,7 +8,7 @@ import { ProductInterface } from '../../../models/interfaces'
   styleUrls: ['./product-card.component.scss'],
 })
 export class ProductCardComponent implements OnInit {
-  @Input() product: ProductInterface
+  @Input() product: CartProductInterface
 
   constructor() {}
 

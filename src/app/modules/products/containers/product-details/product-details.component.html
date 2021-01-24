@@ -7,6 +7,8 @@
 
     <p class="product-details-info__price">$100.00 <span>/ $120.00</span></p>
 
+    <app-quantity [quantityControl]="quantity"></app-quantity>
+
     <app-button>
       <button (click)="handleAddToCard(productDetails)">Add To Cart</button>
     </app-button>

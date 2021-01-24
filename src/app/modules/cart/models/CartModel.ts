@@ -1,13 +1,12 @@
+import { ProductInterface } from '../../products/models/interfaces'
+
 interface CartInterface {
   id: string
   itemList: CartProductInterface[]
 }
 
-interface CartProductInterface {
-  id: string
-  name: string
+interface CartProductInterface extends ProductInterface {
   quantity: number
-  slug: string
 }
 
 export { CartInterface, CartProductInterface }

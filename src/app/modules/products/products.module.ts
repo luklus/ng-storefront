@@ -7,6 +7,8 @@ import { ProductDetailsComponent } from './containers/product-details/product-de
 import { ProductListingComponent } from './containers/product-listing/product-listing.component'
 import { ButtonModule } from '../shared/components/button/button.module'
 import { GridModule } from '../shared/components/grid/grid.module'
+import { QuantityModule } from '../cart/shared/quantity/quantity.module'
+import { ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [ProductDetailsComponent, ProductListingComponent],
@@ -16,6 +18,8 @@ import { GridModule } from '../shared/components/grid/grid.module'
     GridModule,
     ProductCardModule,
     ProductsRoutingModule,
+    ReactiveFormsModule,
+    QuantityModule,
   ],
 })
 export class ProductsModule {}

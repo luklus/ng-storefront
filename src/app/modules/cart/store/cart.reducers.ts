@@ -4,7 +4,7 @@ import { addToCart, getCart } from './cart.actions'
 
 const initialState: CartInterface = {
   id: '10',
-  itemList: [{ id: '1', name: 'Product 1', quantity: 1, slug: 'product1' }],
+  itemList: [{ id: '0001', name: 'Product 1', quantity: 1, slug: 'product1' }],
 }
 
 const cartReducer = createReducer(

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { FormControl } from '@angular/forms'
 import { ActivatedRoute, ParamMap, Router } from '@angular/router'
 import { Store } from '@ngrx/store'
 import { Observable, throwError } from 'rxjs'
@@ -16,6 +17,7 @@ import { ProductsService } from '../../services/products.service'
 })
 export class ProductDetailsComponent implements OnInit {
   productDetails$: Observable<ProductInterface>
+  quantity = new FormControl(1)
 
   constructor(
     private productsService: ProductsService,
@@ -37,6 +39,13 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   handleAddToCard(product: CartProductInterface): void {
-    this.store.dispatch(addToCart({ item: product }))
+    this.store.dispatch(
+      addToCart({
+        item: {
+          ...product,
+          quantity: this.quantity.value,
+        },
+      })
+    )
   }
 }
