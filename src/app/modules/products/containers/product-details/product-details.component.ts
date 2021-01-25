@@ -1,12 +1,10 @@
+import { ActivatedRoute, ParamMap, Router } from '@angular/router'
+import { CartProductInterface } from 'src/app/modules/cart/models/CartModel'
+import { CartService } from 'src/app/modules/cart/services/cart.service'
+import { catchError, switchMap } from 'rxjs/operators'
 import { Component, OnInit } from '@angular/core'
 import { FormControl } from '@angular/forms'
-import { ActivatedRoute, ParamMap, Router } from '@angular/router'
-import { Store } from '@ngrx/store'
 import { Observable, throwError } from 'rxjs'
-import { catchError, switchMap } from 'rxjs/operators'
-import { CartProductInterface } from 'src/app/modules/cart/models/CartModel'
-import { addToCart } from 'src/app/modules/cart/store/cart.actions'
-import { CartStateInterface } from 'src/app/modules/cart/store/cart.state'
 import { ProductInterface } from '../../models/interfaces'
 import { ProductsService } from '../../services/products.service'
 
@@ -20,10 +18,10 @@ export class ProductDetailsComponent implements OnInit {
   quantity = new FormControl(1)
 
   constructor(
+    private cartService: CartService,
     private productsService: ProductsService,
     private route: ActivatedRoute,
-    private router: Router,
-    private store: Store<CartStateInterface>
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -39,13 +37,9 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   handleAddToCard(product: CartProductInterface): void {
-    this.store.dispatch(
-      addToCart({
-        item: {
-          ...product,
-          quantity: this.quantity.value,
-        },
-      })
-    )
+    this.cartService.addToCart({
+      ...product,
+      quantity: this.quantity.value,
+    })
   }
 }

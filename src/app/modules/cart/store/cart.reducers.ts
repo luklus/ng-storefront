@@ -12,10 +12,33 @@ const cartReducer = createReducer(
 
   on(getCart, state => state),
 
-  on(addToCart, (state, { item }) => ({
-    ...state,
-    itemList: [...state.itemList, item],
-  }))
+  on(addToCart, (state, { item }) => {
+    const isItemInCart = state.itemList.find(
+      itemCart => itemCart.id === item.id
+    )
+
+    if (isItemInCart) {
+      const itemList = state.itemList.map(itemCart => {
+        if (itemCart.id === item.id) {
+          return {
+            ...itemCart,
+            quantity: itemCart.quantity + item.quantity,
+          }
+        }
+        return item
+      })
+
+      return {
+        ...state,
+        itemList,
+      }
+    }
+
+    return {
+      ...state,
+      itemList: [...state.itemList, item],
+    }
+  })
 )
 
 export { cartReducer }
